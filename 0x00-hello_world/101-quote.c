@@ -1,14 +1,12 @@
-#include <stdio.h>
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{ 
-    char phrase[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-
-    fwrite(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n"
-     , sizeof(phrase));
-    return (1);
-}
+#include <stdio.h> 
+ 
+void makeItSo (char *str) { 
+    if (*str == '\0') return; 
+    makeItSo (str + 1); 
+    putchar (*str); 
+} 
+ 
+int main (void) { 
+    makeItSo ("\ndlrow olleH91-01-5102 ,raproK aroD - "lufesu si tra fo eceip taht"); 
+    return 0; 
+} 
