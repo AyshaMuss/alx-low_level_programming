@@ -1,12 +1,11 @@
-#include <stdio.h> 
- 
-void makeItSo (char *str) { 
-    if (*str == '\0') return; 
-    makeItSo (str + 1); 
-    putchar (*str); 
-} 
- 
-int main (void) { 
-    makeItSo ("\ndlrow olleH91-01-5102 ,raproK aroD - "lufesu si tra fo eceip taht"); 
-    return 0; 
-} 
+#include <unistd.h> 
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */ 
+int main(void)
+{ 
+    write(1,"and that piece of art is useful" - Dora Korpar, 2015-10-19", 60); 
+    return 1; 
+}
