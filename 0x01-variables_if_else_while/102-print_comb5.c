@@ -1,40 +1,36 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - create 2 pairs of numbers that do not repeat
+ * Return: 0
  */
 int main(void)
 {
-int number1, number2, number3, number4;
+	int j, i;
 
-for (number1 = 0; number1 < 10; number1++)
-{
-for (number2 = 0; number2 < 10; number2++)
-{
-for (number3 = 0; number3 < 10; number3++)
-{
-for (number4 = 0; number4 < 10; number4++)
-{
-if (number1 == number2 || number1 == number3 || number2 == number3 || number3 == number4
-|| number1 > number2 || number2 > number3 || number3 > number4 || number1 > number4)
-continue;
-else
-putchar ((number1 % 10) + '0');
-putchar ((number2 % 10) + '0');
-putchar ((number3 % 10) + '0');
-putchar ((number4 % 10) + '0');
-if (number1 == 9 && number2 == 8 && number3 == 9 && number4 == 9)
-{
-}
-else
-putchar (' ');
-putchar (',');
-putchar (' ');
-}
-}
-}
-}
-putchar('\n');
-return (0);
+	for (j = 0; j <= 99; j++)
+	{
+		for (i = j; i <= 99; i++)
+		{
+			if (i != j)
+			{
+
+				putchar(j / 10 + 48);
+				putchar(j % 10 + 48);
+				putchar(' ');
+				putchar(i / 10 + 48);
+				putchar(i % 10 + 48);
+
+				if (j * 100 + i != 9899)
+				{
+					putchar(',');
+					putchar(' ');
+				}
+			}
+
+		}
+
+	}
+	putchar('\n');
+	return (0);
 }
