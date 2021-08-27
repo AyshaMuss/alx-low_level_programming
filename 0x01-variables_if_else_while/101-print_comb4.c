@@ -6,30 +6,36 @@
  */
 int main(void)
 {
-int i1, i2, i3;
 
-for (i1 = 0; i1 < 10; i1++)
-{
-for (i2 = 0; i2 < 10; i2++)
-{
-for (i3 = 0; i3 < 10; i3++)
-{
-if (i1 == i2 || i1 == i3 || i2 == i3
-|| i1 > i2 || i2 > i3 || i1 > i3)
-continue;
-else
-putchar ((i1 % 10) + '0');
-putchar ((i2 % 10) + '0');
-putchar ((i3 % 10) + '0');
-if (i1 == 7 && i2 == 8 && i3 == 9)
-{
-}
-else
-putchar (',');
-putchar (' ');
-}
-}
-}
-putchar('\n');
-return (0);
+	int i, j, k;
+
+	for (i = 48; i < 58; i++)
+	{
+		for (j = i; j < 58; j++)
+		{
+			for (k = j; k < 58; k++)
+			{
+				if (i == j || j == k || i == k)
+				{
+					continue;
+				}
+				putchar(i);
+				putchar(j);
+				putchar(k);
+
+				if (i == 55 && j == 56 && k == 57)
+				{
+					break;
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
+
+			}
+		}
+	}
+	putchar('\n');
+	return (0);
 }
