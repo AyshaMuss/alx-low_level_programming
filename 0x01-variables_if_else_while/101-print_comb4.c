@@ -1,25 +1,27 @@
 #include <stdio.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-int number1, number2, number3;
+int i1, i2, i3;
 
-for (number1 = 0; number1 < 10; number1++)
+for (i1 = 0; i1 < 10; i1++)
 {
-for (number2 = 0; number2 < 10; number2++)
+for (i2 = 0; i2 < 10; i2++)
 {
-for (number3 = 0; number3 < 10; number3++)
+for (i3 = 0; i3 < 10; i3++)
 {
-if (number1 == number2 || number1 == number3 || number2 == number3
-|| number1 > number2 || number2 > number3 || number1 > number3)
+if (i1 == i2 || i1 == i3 || i2 == i3
+|| i1 > i2 || i2 > i3 || i1 > i3)
 continue;
 else
-putchar ((number1 % 10) + '0');
-putchar ((number2 % 10) + '0');
-putchar ((number3 % 10) + '0');
-if (number1 == 7 && number2 == 8 && number3 == 9)
+putchar ((i1 % 10) + '0');
+putchar ((i2 % 10) + '0');
+putchar ((i3 % 10) + '0');
+if (i1 == 7 && i2 == 8 && i3 == 9)
 {
 }
 else
