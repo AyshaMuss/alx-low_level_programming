@@ -2,52 +2,27 @@
 #include "main.h"
 
 /**
- * print_sign - -Entry point
- *@n: The character to print
+  * print_sign - Entry point
  *
- * Return: Always 0.
+ * @n: is a variable name
+ *
+ * Return: Always 0 (Success)
  */
-int print_sign(int r)
+int print_sign(int n)
 {
-r = print_sign(98);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(0);
-_putchar(',');
-_putchar(' ');
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(0xff);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(-1);
-_putchar(',');
-_putchar(' ');
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(99);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(INT_MAX);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(INT_MIN);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
-r = print_sign(-4);
-if (r < 0)
-r *= -1;
-_putchar(r + '0');
-_putchar('\n');
+if (n > 0)
+{
+_putchar('+');
+return (1);
+}
+else if (n == 0)
+{
+_putchar('0');
 return (0);
+}
+else
+{
+_putchar('-');
+return (-1);
+}
 }
