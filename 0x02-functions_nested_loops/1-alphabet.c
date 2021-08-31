@@ -1,9 +1,8 @@
 #include "main.h"
 /**
- * main - Entry point
- * @void print_alphabet(void): the character to be printed
+ * main - check the code for Holberton School students.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 void print_alphabet(void)
 {
