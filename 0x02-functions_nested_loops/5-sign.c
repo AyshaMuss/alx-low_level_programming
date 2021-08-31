@@ -8,7 +8,6 @@
  */
 int print_sign(int r)
 {
-int r;
 r = print_sign(98);
 if (r < 0)
 r *= -1;
