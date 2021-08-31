@@ -9,7 +9,7 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c);
-int main(int char)
+int main(int _putchar)
 {
 _putchar('_');
 _putchar('p');
