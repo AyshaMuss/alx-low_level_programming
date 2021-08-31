@@ -19,6 +19,6 @@ _putchar('t');
 _putchar('o');
 _putchar('n');
 _putchar('\n');
-printf ("_putchar")
+putchar('_putchar')
 return (0);
 }
