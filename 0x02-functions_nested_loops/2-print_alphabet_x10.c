@@ -11,6 +11,7 @@ int count;
 for (count = 'a'; count < 10; count++)
 {
 for (c = 'a'; a <= 'z'; c++)
-_putchar(c)
+_putchar(c);
+}
 _putchar ('\n');
 }
