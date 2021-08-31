@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * main - Entry point
- * print_alphabet - The prototype containing the character to print
+ * @c: The character to print
  *
  * void print_alphabet(void): the character to be printed
  * Return: Always 0 (Success)
