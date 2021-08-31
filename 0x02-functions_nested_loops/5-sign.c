@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * print_sign - -Entry point
+ *@n: The character to print
  *
  * Return: Always 0.
  */
-int print_sign(int r)
+int print_sign(int n)
 {
     int r;
 
