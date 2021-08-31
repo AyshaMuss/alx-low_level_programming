@@ -15,5 +15,6 @@
 _putchar(c);
 }
 _putchar('\n');
+print_alphabet()
 return (0);
  }
