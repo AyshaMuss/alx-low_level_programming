@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * void print_times_table - Entry poit.
- *@n - variable character
+ * void print_times_table - prints times table
+ *@n - times table to use
  *
  * Return: Always 0.
  */
