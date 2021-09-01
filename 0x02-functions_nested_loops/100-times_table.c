@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * void print_times_table - prints times table
- *@n - times table to use
+ * print_times_table - prints times table
+ *@n - is intiger variable for print times table
  *
  * Return: Always 0.
  */
