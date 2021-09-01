@@ -6,40 +6,44 @@
  *
  * Return: Always 0.
  */
-void print_times_table(void)
+void print_times_table(int n)
 {
-int a, b;
-int mult;
+int a = 0, rep, b;
+if (n < 0 || n > 15)
+return;
 
-for (a = 0; a <= 15; a++)
+while (a <= n)
 {
-for (b = 0; b <= 15; b++)
+for (b = 0; b <= n; b++)
 {
-mult = a * b;
-if (mult >= 10)
+rep = a * b;
+if (b == 0)
+_putchar('0' + rep);
+else if (rep < 10)
 {
 _putchar(' ');
-_putchar((mult / 10) + '0');
-_putchar((mult % 10) + '0');
-if (b != 15)
-{
-_putchar(',');
+_putchar(' ');
+_putchar('0' + rep);
 }
+else if (rep < 100)
+{
+_putchar(' ');
+_putchar('0' + rep / 10);
+_putchar('0' + rep % 10);
 }
 else
 {
-if (b != 0)
-{
-_putchar(' ');
-_putchar(' ');
+_putchar('0' + rep / 100);
+_putchar('0' + (rep - 100) / 10);
+_putchar('0' + rep % 10);
 }
-_putchar(mult + '0');
-if (b != 15)
+if (b < n)
 {
 _putchar(',');
-}
+_putchar(' ');
 }
 }
 _putchar('\n');
+a++;
 }
 }
