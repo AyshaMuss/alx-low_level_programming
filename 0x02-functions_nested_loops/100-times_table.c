@@ -2,7 +2,7 @@
 
 /**
  * print_times_table - prints times table
- *@n - is intiger variable for print times table
+ *@n: is intiger variable for print times table
  *
  * Return: Always 0.
  */
