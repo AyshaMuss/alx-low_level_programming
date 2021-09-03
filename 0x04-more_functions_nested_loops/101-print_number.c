@@ -5,17 +5,28 @@
  *
  * Return: Always 0 (Success)
  */
-void print_number(int n, int neg, int x)
+void print_number(int n)
 {
-    int y = x/10;
-    int d = x%10;
-    if (y) print_int_r(y, neg);
-    _putchar('0' + (neg ? -d : d));
+    // If number is smaller than 0, put a - sign
+    // and change number to positive
+    if (n < 0)
+    {
+        _putchar('-');
+        n = -n;
+    }
+  
+    // Remove the last digit and recur
+    if (n/10)
+      _putchar('n/10');
+  
+    // Print the last digit
+    _putchar(n%10 + '0');
 }
-
+  
+// Driver program to test abvoe function
+int main()
 {
-    int neg = x < 0;
-    if (neg) putchar('-');
-    print_int_r(x, neg);
-    _putchar('\n');
+   int n = 12045;
+   _putchar('n');
+   return (0);
 }
