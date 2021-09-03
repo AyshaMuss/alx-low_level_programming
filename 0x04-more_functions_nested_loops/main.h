@@ -16,7 +16,7 @@ int _putchar(char c);
 int my_put_nbr(int n);
 void print_int_r(int x, int neg);
 void print_int(int x);
-void print_number(int n, int neg, int x);
 int main(void);
 _putchar();
+void print_number(int n);
 #endif
