@@ -14,8 +14,10 @@ void print_triangle(int size);
 int main(int argc, char** argv);
 int _putchar(char c);
 int my_put_nbr(int n);
-void print_int_r (int x, int neg);
-void print_int (int x);
+void print_int_r(int x, int neg);
+void print_int(int x);
 void print_number(int n, int neg, int x);
-int main();
+int main(void);
+#include <stio.h>
+_putchar();
 #endif
