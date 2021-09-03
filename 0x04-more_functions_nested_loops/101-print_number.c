@@ -11,7 +11,7 @@ void print_number(int n)
     // and change number to positive 
     if (n < 0)
     { 
-      putchar('-'); 
+      _putchar('-'); 
       n = -n; 
     }
     // If number is 0
