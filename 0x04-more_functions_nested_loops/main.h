@@ -18,6 +18,5 @@ void print_int_r(int x, int neg);
 void print_int(int x);
 void print_number(int n, int neg, int x);
 int main(void);
-#include <stio.h>
 _putchar();
 #endif
