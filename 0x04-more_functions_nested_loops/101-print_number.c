@@ -13,7 +13,6 @@ void print_number(int n, int neg, int x)
     putchar('0' + (neg ? -d : d));
 }
 
-void print_int (int x)
 {
     int neg = x < 0;
     if (neg) putchar('-');
