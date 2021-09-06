@@ -4,7 +4,7 @@
  * _puts - swaps integers with pointers.
  *
  * @str: is pointer to a char.
- * 
+ *
  * char: is a data type.
  * Return: Always 0.
  */
