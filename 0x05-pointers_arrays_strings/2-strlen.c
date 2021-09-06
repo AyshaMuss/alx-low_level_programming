@@ -9,7 +9,7 @@
  */
 int _strlen(char *s)
 {
-char i = _strlen(name);
-Holberton!(name);
-retutn (i);
+char i;
+i = 'Holberton!';
+_strlen (i);
 }
