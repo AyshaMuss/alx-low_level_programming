@@ -9,6 +9,9 @@
  */
 int _strlen(char *s)
 {
-char i[10] = 'Holberton!';
-_strlen (i);
+   int c = 0;
+   while (*s != '\0')
+      c++;
+
+   return c;
 }
