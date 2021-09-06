@@ -1,24 +1,25 @@
 #include "main.h"
 
 /**
- * _puts - swaps integers with pointers.
+ * rint_rev - swaps integers with pointers.
  *
- * @str: is pointer to a char.
+ * @s: is pointer to a char.
  *
  * char: is a data type.
  * Return: Always 0.
  */
 void print_rev(char *s)
-{
-int c, d;
-
-while (*(s + c) != '\0')
-{
-c++;
-}
-for (d = (c - 1); d >= 0; d--)
-{
-_putchar(*(s + d));
-}
-_putchar('\n');
-}
+{  
+    // declare variable  
+    int i, len, temp;  
+    len = strlen(s); // use strlen() to get the length of str string  
+      
+    // use for loop to iterate the string   
+    for (i = 0; i < len/2; i++)  
+    {  
+        // temp variable use to temporary hold the string  
+        temp = s[i];  
+        s[i] = s[len - i - 1];  
+        s[len - i - 1] = temp;  
+    }  
+}  
