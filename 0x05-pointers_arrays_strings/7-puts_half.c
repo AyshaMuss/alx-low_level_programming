@@ -12,10 +12,7 @@ void puts_half(char *str)
 {
 int c = 0;
 
-	while (*(str + c) / 2 != '\0')
-    {
-    _putchar(*(str + c) / 2);
-	c++;
-    }
-_putchar('\n');
+while (*(str + c) / 2 != '\0')
+c++;
+return (c/2);
 }
