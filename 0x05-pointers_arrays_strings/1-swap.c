@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * swap_int - checks the code
+ * swap_int - swaps integers with pointers.
  *
  * @a: is pointer to an int.
  * @b: is pointer to an int.
@@ -9,18 +9,6 @@
  */
 
 void swap_int(int *a, int *b)
-{
-{
-int a;
-int b;
-a = 98;
-b = 42;
-printf("a is %d, b is %d\n", a, b);
-swap(&a, &b);
-printf("a is %d, b is %d\n", a, b);
-return (0);
-}
-void swap_int(int *a, int *b) 
 {
 int temp;
 temp = *a;
