@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _strlen - swaps integers with pointers.
+ * _puts - swaps integers with pointers.
  *
- * @s: is pointer to an char.
+ * @str: is pointer to a char.
+ * @c: is a character to int.
  * char: is a data type.
  * Return: Always 0.
  */
