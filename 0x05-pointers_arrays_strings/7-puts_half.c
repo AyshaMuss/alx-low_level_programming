@@ -14,5 +14,5 @@ int c = 0;
 
 while (*(str + c) / 2 != '\0')
 c++;
-return (c/2);
+return (c);
 }
