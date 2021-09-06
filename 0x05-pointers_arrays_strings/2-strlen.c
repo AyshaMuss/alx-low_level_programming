@@ -9,7 +9,6 @@
  */
 int _strlen(char *s)
 {
-char i;
-i = 'Holberton!';
+char i[10] = 'Holberton!';
 _strlen (i);
 }
