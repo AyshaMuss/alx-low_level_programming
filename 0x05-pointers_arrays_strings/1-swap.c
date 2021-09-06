@@ -8,7 +8,7 @@
  * Return: Always 0.
  */
 
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
   int a = 98;
   int b = 42;
@@ -16,4 +16,4 @@ void swap_int(int *a, int *b);
   swap(&a, &b);
   printf("a is %d, b is %d\n", a, b);
   return (0);
-  }
+}
