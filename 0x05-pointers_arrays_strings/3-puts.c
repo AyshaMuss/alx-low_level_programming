@@ -9,19 +9,12 @@
  */
 void _puts(char *str)
 {
-  int len = strlen(str) + 1;
-  char *temp = alloca(len);
+int c = 0;
 
-  int i;
-  for (i = 0; i < len; i++)
-  {
-    char ch = str[i];
-    if (ch == '\n')
-      break;
-    temp[i] = ch;
-  }
-
-  temp[i] = 0;
-
-  puts(temp);
+while (*(str + c) != '\0')
+{
+_putchar(*(str + c));
+c++;
+}
+_putchar('\n');
 }
