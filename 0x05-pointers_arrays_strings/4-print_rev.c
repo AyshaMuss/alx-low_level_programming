@@ -10,11 +10,15 @@
  */
 void print_rev(char *s)
 {
-int i, len, temp;
-len = print_rev(s);
-for (i = 0; i < len/2; i++)
+    int c = 0, j =0;
+
+while (*(s + c) != '\0')
 {
-temp = s[i];
-s[i] = s[len - i - 1];
+c++;
 }
+for (d = (c -1); d >= 0; d--)
+{
+_putchar(*(s + d));
+}
+_putchar('\n');
 }
