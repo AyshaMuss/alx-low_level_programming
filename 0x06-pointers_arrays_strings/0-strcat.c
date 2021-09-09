@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
 /**
  *_strcat - This function concatenates two strings.
  * 
@@ -17,6 +17,6 @@ size_t i;
 
 for (i = 0; i < n && src[i] != '\0'; i++)
 dest[dest_len + i] = src[i];
-dest[dest_len+ i] = '\0';
+dest[dest_len + i] = '\0';
 return (dest);
 }
