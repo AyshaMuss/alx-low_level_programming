@@ -3,13 +3,15 @@
 /**
  * string_toupper -  changes all lowercase letters of a string to uppercas.
  *
- *@s: is a pointer to a char.
+ * @s: is a pointer to a char.
  * 
  * Return: Always 0.
  */
-char *string_toupper(char *);
+
+char *string_toupper(char *s)
 {
 int i = 0;
+
 while (s[i] != '\0')
 {
 if (s[i] >= 97 && s[i] <= 122)
