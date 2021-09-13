@@ -9,7 +9,7 @@
  * 
  * Return: Returns the transformed pointer
  * 
- */
+**/
 
 char *_memset(char *s, char b, unsigned int n)
 {
