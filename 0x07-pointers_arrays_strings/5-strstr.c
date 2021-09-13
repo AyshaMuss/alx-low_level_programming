@@ -3,10 +3,10 @@
 /**
  * _strstr - locates a substring.
  *
- * @haystack: is a pointer to a char
- * @needle: is a pointer to a char
+ * @haystack: is a pointer to a char.
+ * @needle: is a pointer to a char.
  *
- * Return: Returns the transformed pointer
+ * Return: Returns the transformed pointer.
  *
 **/
 
