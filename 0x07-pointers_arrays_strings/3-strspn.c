@@ -2,13 +2,13 @@
 
 /**
  * _strspn - gets the length of a prefix substring.
- * 
- * @s: is a pointer to a char 
- * @accept: is a pointer to a char 
- * 
+ *
+ * @s: is a pointer to a char
+ * @accept: is a pointer to a char
+ *
  * Return: Returns the transformed pointer
- * 
- **/
+ *
+**/
 
 unsigned int _strspn(char *s, char *accept)
 {
