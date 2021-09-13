@@ -4,6 +4,7 @@
  * _strpbrk - searches a string for any of a set of bytes.
  *
  * @s: is a pointer to a char
+ * @accept: is a pointer to a char
  *
  * Return: Return the transformed pointer
  *
