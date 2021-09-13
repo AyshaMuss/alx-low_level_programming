@@ -12,14 +12,29 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-int i;
+int i = 0, j = 0;
+int here = 0;
 
-for (i = 0; haystack[i]; i++)
-if (haystack[i] == needle[0])
-return (haystack + i);
-
-if (haystack[i] == needle[0])
-return (haystack + i);
-
-return (0);
+while
+(
+    if (neele[i] == haystack[j])
+    {
+        if (here == 0)
+        here = j;
+        i++;
+        j++;
+        if (i >= strlen(needle))
+        {
+        return (here);
+    }
+    if (j >= strlen(haystack))
+    {
+        return (-1);
+    }
+)
+else
+{
+    j++, i = 0; here = 0;
+}
+}
 }
