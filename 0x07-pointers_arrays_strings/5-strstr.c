@@ -6,7 +6,7 @@
  * @haystack: is a pointer to a char
  * @needle: is a pointer to a char
  *
- * Return: Return the transformed pointer
+ * Return: Returns the transformed pointer
  *
 **/
 
