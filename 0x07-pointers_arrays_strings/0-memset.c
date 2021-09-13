@@ -3,7 +3,7 @@
 /**
  * _memset - This function fills memory with a constant byte
  * 
- * @s: is a pointer to a char
+ * @s: is pointer to a char
  * @b: is a char
  * @n: is an unsigned int
  * 
