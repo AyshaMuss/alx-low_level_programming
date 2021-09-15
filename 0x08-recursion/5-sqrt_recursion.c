@@ -16,7 +16,7 @@ if (n == 0 || n == 1)
 {
 return _sqrt_recursion(n);
 }
-while (result <= n)
+else if (result <= n)
 {
 i++;
 result = i * i;
