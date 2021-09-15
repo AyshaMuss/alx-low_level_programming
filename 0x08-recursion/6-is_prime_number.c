@@ -1,7 +1,9 @@
 #include "main.h"
 
+int _divider(int x, int n);
+
 /**
- * _sqrt_recursion - returns the natural square root of a number.
+ * is_prime_number - Returns 0 on none prime, 1 on prime number..
  *
  * @n: is a pointer to an int.
  *
@@ -11,20 +13,32 @@
 
 int is_prime_number(int n)
 {
-int num, p = 0;
-for (n = 1; n <= num; n++)
-{
-if (num % n == 0)
-{
-p++;
-}
-}
-if (p == 2)
-{
-return (num);
-}
+
+if (n <= 1)
+	return (0);
 else
-{
-return (0);
+	return (_divider(2, n));
+
 }
+
+/**
+ * _divider - Returns an iterative division.
+ *
+ * @x: is an int.
+ * @n: is an int.
+ *
+ * Return: Returns the result.
+ *
+**/
+
+int _divider(int x, int n)
+{
+
+if (x == n)
+	return (1);
+else if (n % x == 0)
+	return (0);
+else
+	return (_divider(++x, n));
+
 }
