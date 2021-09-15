@@ -1,24 +1,47 @@
 #include "main.h"
-#include <math.h>
+int _multiplier(int x, int n);
 
 /**
- * _sprt_recursion - is a function that returns the natural square root of a number.
+ * _sqrt_recursion - returns the natural square root of a number.
  *
- * @n: is an int to the function.
- * @p: is an int to the function
- * @m: is an int to the function
+ * @n: is a pointer to an int.
  *
- * Return: Return the transformed pointer
+ * Return: Returns the result.
  *
 **/
 
 int _sqrt_recursion(int n)
 {
-int prev; 
-float next = (prev + n / prev) / 2;
-if (fabs(next - prev) < FLT_EPSILON * next)
-{
-return (next);
+
+if (n == 1)
+	return (1);
+else if (n == 0)
+	return (0);
+else if (n < 0)
+	return (-1);
+
+return (_multiplier(2, n));
+
 }
-return (_sqrt_recursion(num, next));
+
+/**
+ * _multiplier - Returns an iterative multiplication.
+ *
+ * @x: is an int.
+ * @n: is an int.
+ *
+ * Return: Returns the result.
+ *
+**/
+
+int _multiplier(int x, int n)
+{
+
+if (x * x == n)
+	return (x);
+else if (x * x > n)
+	return (-1);
+else
+	return (_multiplier(++x, n));
+
 }
