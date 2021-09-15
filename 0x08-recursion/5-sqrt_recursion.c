@@ -14,8 +14,11 @@
 
 int _sqrt_recursion(int n)
 {
- float next = (prev + num / prev) / 2;
-    if (fabs(next - prev) < FLT_EPSILON * next)
-        return next;
-    return (_sqrt_recursion(num, next));
+int prev; 
+float next = (prev + n / prev) / 2;
+if (fabs(next - prev) < FLT_EPSILON * next)
+{
+return (next);
+}
+return (_sqrt_recursion(num, next));
 }
