@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _puts_reccursion - is a function that prints a string.
+ * _puts_recursion - is a function that prints a string.
  *
  * @s: is a pointer to a char array
  *
