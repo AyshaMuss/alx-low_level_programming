@@ -13,7 +13,7 @@
 int wildcmp(char *s1, char *s2)
 {
 int i, c = 0;
-if (strlen (s1) == strlen (s2))
+if (strlen(s1) == strlen(s2))
 {
     for (i = 0; s2[i]; i++)
 {
