@@ -14,9 +14,9 @@ int is_prime_number(int n)
 int num, p = 0;
 for (n = 1; n <= num; n++)
 {
-if (num % i == 0)
+if (num % n == 0)
 {
-p++
+p++;
 }
 }
 if (p == 2)
