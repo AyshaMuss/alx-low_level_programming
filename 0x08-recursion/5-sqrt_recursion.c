@@ -16,7 +16,7 @@ if (n == 0 || n == 1)
 {
 return (n);
 }
-while (result <= x)
+while (result <= n)
 {
 i++;
 result = i * i;
