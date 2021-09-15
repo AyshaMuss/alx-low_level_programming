@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 /**
  * _sprt_recursion - is a function that returns the natural square root of a number.
@@ -13,9 +14,8 @@
 
 int _sqrt_recursion(int n)
 {
-int p;
-int m = ((p + n) /p)/2;
-    if (fabs(m - p) < FLT_EPSILON * m)
-        return (m);
-    return _sqrt_recursion(n, m);
+ float next = (prev + num / prev) / 2;
+    if (fabs(next - prev) < FLT_EPSILON * next)
+        return next;
+    return (_sqrt_recursion(num, next));
 }
