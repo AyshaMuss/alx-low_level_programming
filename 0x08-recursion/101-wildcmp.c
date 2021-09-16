@@ -13,17 +13,19 @@
 
 int wildcmp(char *s1, char *s2)
 {
-int i, c = 0;
-if (strlen(s1) == strlen(s2))
+while( ( *s1 != '\0' && *s2 != '\0' ) && *s1 == *s2 )
 {
-    for (i = 0; s2[i]; i++)
-{
-if (s1[i] == s2[i])
-c++;
-}
-if (c == i)
-return (1);
+s1++;
+s2++;
 }
 
-return (0);
+if(*s1 == *s2)
+{
+return 0;
+}
+
+else
+{
+return *s1 - *s2;
+}
 }
