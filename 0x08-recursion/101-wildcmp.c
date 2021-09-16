@@ -2,8 +2,7 @@
 #include <string.h>
 
 /**
- *
- * wildcmp - if a fuction that compares two strings.
+ * wildcmp - is a fuction that compares two strings.
  *
  * @s1: is a pointer to char.
  * @s2: is a pointer to char.
