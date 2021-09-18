@@ -522,14 +522,20 @@ dest[j] = '\0';
 return (dest);
 }
 
-main.c/         0           0     0     644     148       `
+main.c/         0           0     0     644     263       `
 #include "main.h"
 
+/**
+ * main - checks the code
+ * _puts - prints the sentence followed by new line.
+ * Return: Returns alwarys success.
+**/
 int main(void)
 {
-    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
-    return (0);
+_puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+return (0);
 }
+
 _putchar.c/     0           0     0     644     247       `
 #include <unistd.h>
 
