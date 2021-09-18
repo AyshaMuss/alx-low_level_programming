@@ -1,11 +1,9 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
- * _islower - returns an int
+ * _islower -Entry point
+ *@c: The character to print
  *
- * @c: is a variable name
- *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 int _islower(int c)
 {

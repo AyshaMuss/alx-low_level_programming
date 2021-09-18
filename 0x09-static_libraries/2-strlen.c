@@ -1,21 +1,18 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * _strlen - Swaps integers wih pointers.
+ * _strlen - swaps integers with pointers.
  *
- * @s: is a pointer to a char
- *
+ * @s: is pointer to an char.
+ * char: is a data type.
  * Return: Always 0.
  */
-
 int _strlen(char *s)
 {
-int i;
+int c = 0;
 
-while (*(s + i) != '\0')
-{
-i++;
-}
+while (*(s + c) != '\0')
+c++;
 
-return (i);
+return (c);
 }
