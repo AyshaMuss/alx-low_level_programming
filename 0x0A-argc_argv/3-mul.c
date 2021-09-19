@@ -11,16 +11,20 @@
 
 int main(int argc, char *argv[])
 {
-int i;
-if (argc < 2)
+int i, res = 1;
+
+if (argc != 3)
 {
-printf("Error\n");
+printf("%s\n", "Error");
 return (1);
 }
-i = (int) *argv[1] * (int) *argv[2];
-
-printf("%d\n", i);
-
+else
+{
+for (i = 1; i < argc; i++)
+{
+res *= atoi(argv[i]);
+}
+printf("%d\n", res);
+}
 return (0);
-
 }
