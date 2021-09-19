@@ -3,24 +3,24 @@
 
 /**
  * main - prints the function.
- * @num1: is int number.
- * @num2: is an int number.
- * @product: is an int number product.
+ * @argc: counts agruments passed to the function for int.
+ * @argv: gives the value passed to the function for char.
  *
  * Return: Returns always success.
 **/
 
 int main(int argc, char *argv[])
 {
-int i = 0;
-if (i == 3)
+int i;
+if (argc < 2)
 {
-  i +=(atoi(argv[(argc - argc)] + 1) * atoi(argv[(argc - argc)] + 2));
-printf("%d\n", i);
-return (0);
-}
-else
-{printf("Error\n");
+printf("Error\n");
 return (1);
 }
+i = (int) *argv[1] * (int) *argv[2];
+
+printf("%d\n", i);
+
+return (0);
+
 }
