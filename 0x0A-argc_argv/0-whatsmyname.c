@@ -9,6 +9,11 @@
 
 int main(int argc, char *argv[])
 {
-	printf("program's name is: %s\n", argv[0]);
+int i;
+printf("%d\n", argc);
+for (i = 0; i < argc - 1; i++)
+{
+printf("%S", argv[i]);
+}
 	return (0);
 }
