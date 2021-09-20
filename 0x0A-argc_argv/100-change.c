@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-int i, j, k, l, m, sum = 0;
+int i, j, sum = 0;
 int cents = atoi(argv[1]);
 if (argc == 2)
 {
@@ -21,23 +21,15 @@ printf("0\n");
 }
 else
 {
-if (cents >= 25)
+if (cents > 0)
 {
-while (cents >= 25)
+while (cents > 0)
 {
-cents -= 25;
+cents -= 1;
 i++;
 }
 }
-if (cents >= 1)
-{
-while (cents >= 1)
-{
-cents -= 1;
-j++;
-}
-}
-sum = i + j;
+sum += i;
 printf("%d\n", sum);
 }
 }
