@@ -11,62 +11,47 @@
 
 int main(int argc, char *argv[])
 {
-int i = 0, j = 0, k = 0, l = 0, m = 0, sum = 0, cents = atoi(argv[1]);
+int cents, coins = 0;
+
 if (argc == 2)
 {
-if (cents < 0)
-printf("0\n");
-else
+cents = atoi(*(argv + 1));
+while (cents > 0)
 {
-if (cents >= 25)
-{
-while (cents >= 25)
+if (cents % 25 < cents)
 {
 cents -= 25;
-i++;
+coins++;
 }
-}
-if (cents >= 10)
-{
-while (cents >= 10)
+else if (cents % 10 < cents)
 {
 cents -= 10;
-j++;
+coins++;
 }
-}
-if (cents >= 5)
-{
-while (cents >= 5)
+else if (cents % 5 < cents)
 {
 cents -= 5;
-k++;
+coins++;
 }
-}
-if (cents >= 2)
-{
-while (cents >= 2)
+else if (cents % 2 < cents)
 {
 cents -= 2;
-l++;
-}
-}
-if (cents >= 1)
-{
-while (cents >= 1)
+coins++;			}
+else if (cents % 1 < cents)
 {
 cents -= 1;
-m++;
+coins++;
 }
-}
-sum = i + j + k + l + m;
-printf("%d\n", sum);
 }
 }
 else
+{
 printf("Error\n");
 return (1);
-
-return (sum);
 }
+printf("%d\n", coins);
+return (0);
+}
+
 
 
