@@ -1,31 +1,32 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 /**
- * strtow - concatenates arguments.
- * @str: String to be splitted.
- *
- * Return: a pointer to array of String.
+ * argstostr - concatenates arguments.
+ * @ac: number of string to be concatenated.
+ * @av: strings to be concatenated.
+ * Return: String concatenated.
  */
-char **strtow(char *str)
+char *argstostr(int ac, char **av)
 {
-char *array = NULL;
-unsigned int i = 0, j = 0, k;
+int i, j, k = 0;
+char *concat = NULL;
 
-if (strncmp(str, "", 1) || str == NULL)
+if (ac == 0 || av == NULL)
 return (NULL);
-array = malloc((i + j + 1) * sizeof(char));
-if (array == NULL)
+for (i = 0; i < ac; i++)
+for (j = 0; av[i][j] != '\0'; j++)
+k++;
+concat = malloc(sizeof(char) * (k + ac + 1));
+if (concat == NULL)
 return (NULL);
-for (k = 0; k < i; k++)
-array[k] = str[k];
-i = k;
-for (k = 0; k < j; k++)
+for (i = 0, k = 0; i < ac; i++)
 {
-array[i] = str[k];
-i++;
+for (j = 0; av[i][j] != '\0'; j++, k++)
+concat[k] = av[i][j];
+concat[k] = '\n';
+k++;
 }
-array[i] = '\0';
-return (NULL);
+concat[k] = '\0';
+return (concat);
 }
+
