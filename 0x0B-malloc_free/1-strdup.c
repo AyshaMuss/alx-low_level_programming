@@ -31,7 +31,6 @@ char *_strdup(char *str)
 int i;
 int size = _strlen(str) + 1;
 char *ar;
-char *_strdup = NULL;
 str = NULL;
 
 if (str == NULL)
