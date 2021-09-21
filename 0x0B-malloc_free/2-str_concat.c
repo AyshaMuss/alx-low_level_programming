@@ -1,50 +1,65 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * str_concat - concatenate two strings using malloc
- * @s1: newly allocated space in the memory content
- * @s2: newly allocated space in the memory content
+ * _strlen - Swaps integers wih pointers.
  *
- * Return: returns the pointer
+ * @s: is a pointer to a char
+ *
+ * Return: Always 0.
  */
+int _strlen(char *s)
+{
+int i = 0;
+
+while (*(s + i) != '\0')
+	i++;
+
+return (i);
+}
+
+
+/**
+ * str_concat - Concatenates 2 strings..
+ *
+ * @s1: First string.
+ * @s2: Second string.
+ *
+ * Return: Returns the created array.
+**/
 
 char *str_concat(char *s1, char *s2)
 {
-char *a;
-int i, j, c, d;
+
+int i, j, size1, size2, totSize;
+char *ar;
 
 if (s1 == NULL)
-{
-s1 = "";
-}
+	s1 = "";
 if (s2 == NULL)
-{
-s2 = "";
-}
+	s2 = "";
 
-for (i = 0; s1[i] != '\0'; i++)
-		;
-for (j = 0; s2[j] != '\0'; j++)
-;
+size1 = _strlen(s1);
+size2 = _strlen(s2);
+totSize = (size1 + size2)+1;
+ar = malloc(totSize *sizeof(char));
 
-a = malloc((i * sizeof(*s1)) + (j * sizeof(*s2)) + 1);
-if (a == NULL)
-{
-return (NULL);
-}
-
-for (c = 0, d = 0; c < (i + j + 1); c++)
-{
-if (c < i)
-{
-a[c] = s1[c];
-}
+if (ar == NULL)
+	return (NULL);
 else
 {
-a[c] = s2[d++];
+for (i = 0; i < size1; i++)
+	ar[i] = s1[i];
+
+for (j = 0; j < size2; j++)
+{
+	ar[i] = s2[j];
+	i++;
 }
+ar[i + 1] = '\0';
+return (ar);
 }
 
-return (a);
 }
+
