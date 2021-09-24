@@ -31,6 +31,6 @@ array[k] = s1[k];
 i = k;
 for (k = 0; k < j; k++, i++)
 array[i] = s2[k];
-array[i] = '\0';
+array[i + 1] = '\0';
 return (array);
 }
