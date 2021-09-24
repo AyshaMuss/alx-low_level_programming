@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * malloc_cheked - Allocates memory
+ * malloc_checked - is a function that allocates memory.
  * @b: size used to initialize unsigned int
  *
  * Return: always success.
