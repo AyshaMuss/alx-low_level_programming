@@ -3,6 +3,22 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - swaps integers with pointers.
+ * @s: is a pointer to a char
+ *
+ * Return: nothing.
+**/
+int _strlen(char *s)
+{
+int i;
+for (i = 0; *s != '\0'; s++)
+{
+i++;
+}
+return (i);
+}
+
+/**
  * _strncpy - Swaps integers wih pointers.
  *
  * @dest: is a pointer to a char.
