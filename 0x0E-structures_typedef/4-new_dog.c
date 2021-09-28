@@ -21,6 +21,7 @@ dog_t *newDog;
 newDog = malloc(sizeof(struct dog));
 if (newDog == NULL)
 {
+free(newDog);
 return (NULL);
 }
 newName = malloc(sizeof((name) + 1));
