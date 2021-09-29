@@ -9,9 +9,6 @@
 **/
 void print_name(char *name, void (*f)(char *))
 {
-int i;
-i = 0;
-if (name)
-f(&name[i]);
+f(name);
 return;
 }
