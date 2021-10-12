@@ -1,22 +1,23 @@
 #include <stdio.h>
 #include "lists.h"
 
-void print_List(const listint_t *h)
-{
+/**
+ * print_listint - Prints all the elements
+ * @h: Pointer to an int constant
+ *
+ * Return: The number of mine
+**/
 
-const listint_t *tmp = h;
+size_t print_listint(const listint_t *h)
+{
+unsigned int mine = 0;
 
-while(tmp != NULL)
-{
-if(tmp->next == NULL)
-{
-printf("%i\n", tmp->n);
-}
-else
-{
-printf("%i\n", tmp->n);
-}
-tmp = tmp->next;
-}
-}
+	while (h != NULL)
+	{
+		printf("%i\n", h->n);
+		h = h->next;
+		mine++;
+	}
 
+return (mine);
+}
