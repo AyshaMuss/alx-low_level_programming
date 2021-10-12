@@ -1,40 +1,60 @@
-#include "lists.h"
 #include <stdlib.h>
+#include "lists.h"
+
 /**
- * insert_nodeint_at_index - insert a node at index
- * @head: head of the list
- * @index: location to insert node
- * @n: value of the inserted node
- *
- * Return: pointer to head of list
+ * add_nodeint - Adds a new node
+ * @head: Pointer to a pointer of a struct constant
+ * @n: int constant
+ * Return: The number of nodes
+**/
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+listint_t *newNode;
+
+newNode = malloc(sizeof(newNode));
+if (newNode == NULL)
+		return (NULL);
+newNode->n = n;
+newNode->next = *(head);
+*head = newNode;
+
+return (newNode);
+}
+
+/**
+ * insert_nodeint_at_index - Inserts a node in a specific position
+ * @head: Pointer to a pointer pointing to a struct
+ * @idx: Index of the list where the new node should be added
+ * @n: value of the int passed to the new node
+ * Return: The address of the new node
 **/
 
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-listint_t *current, *new;
+listint_t *newNode;
+unsigned int i = 0;
 
-current = *head;
-new = malloc(sizeof(listint_t));
-if (new == NULL)
+if (head == NULL)
 return (NULL);
-new->n = n;
-if (index == 0)
+
+if (idx == 0)
+return (add_nodeint(head, n));
+
+while (*head != NULL)
 {
-new->next = current;
-*head = new;
-return (*head);
-}
-while (index > 1)
+if (idx == i)
 {
-current = current->next;
-index--;
-if (!current)
-{
-free(new);
+newNode = malloc(sizeof(newNode));
+if (newNode == NULL)
 return (NULL);
+
+newNode->n = n;
+newNode->next = *head;
+*head = newNode;
+return (newNode);
 }
+head = &(*head)->next;
+i++;
 }
-new->next = current->next;
-current->next = new;
-return (new);
+return (NULL);
 }
