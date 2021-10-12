@@ -1,56 +1,30 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
 /**
- *unique_node_count - counts no. of unique nodes
- *@head:pointer to a head node
- *Return:number of unique nodes,otherwise 0
+ * print_listint_safe - prints the elements in linked list
+ * @h: head of listint_t type
+ *
+ * Return: size_t, number of nodes. Exits with 98 on failure
  */
-size_t unique_node_count(const listint_t *head)
+size_t print_listint_safe(const listint_t *h)
 {
-	listint_t *hare, *tortoise;
-	size_t count = 1;
+size_t n_nodes = 0;
+const listint_t *temp_h = NULL, *loop_node= NULL;
 
-	if (head == NULL || head->next == NULL)
-	{
-		return (0);
-	}
-	hare = head->next->next;
-	tortoise = head->next;
-	while (hare)
-	{
-		if (tortoise == hare)
-		{
-			tortoise = head;
-			while (tortoise != hare)
-			{
-				count++;
-				tortoise = tortoise->next;
-				hare = hare->next;
-			}
-			tortoise = tortoise->next;
-			while (tortoise != hare)
-			{
-				count++;
-				tortoise = tortoise->next;
-			}
-
-/**
- *print_listint_safe - prints a listint list
- *@head:pointer to head
- *Return:number of nodes in list
- */
-size_t print_listint_safe(const listint_t *head)
+temp_h = h;
+if (!h)
+exit(98);
+while (temp_h)
 {
-	unsigned int i = 0;
-
-	if (head == NULL)
-		exit(98);
-	while (head)
-	{
-		printf("[%p] %d", (void *)head, head->n);
-		i++;
-		head = head->next;
-	}
-	return (i);
+if (h->next == temp_h && n_nodes > 2)
+{
+loop_node = temp_h;
+printf("loop node: [%p] %d\n", (void *)loop_node, loop_node->n);
+exit(98);
+}
+printf("[%p] %d\n", (void *)temp_h, temp_h->n);
+temp_h = temp_h->next;
+n_nodes++;
+}
+return (n_nodes);
 }
