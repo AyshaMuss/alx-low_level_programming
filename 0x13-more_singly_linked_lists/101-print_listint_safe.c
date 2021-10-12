@@ -10,38 +10,18 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-size_t i, num = 0;
+const listint_t **newlist;
+	size_t i;
 
-const listint_t **newlist, **list = NULL;
 newlist = malloc(size * sizeof(listint_t *));
-
-while (head != NULL)
-{
-for (i = 0; i < num, (size - 1); i++)
-{
-newlist[i] = list[i];
-newlist[i] = new;
-free(list);
-return (newlist);
-
 if (newlist == NULL)
 {
 free(list);
 exit(98);
 }
-
-if (head == list[i])
-{
-printf("-> [%p] %d\n", (void *)head, head->n);
+for (i = 0; i < size - 1; i++)
+newlist[i] = list[i];
+newlist[i] = new;
 free(list);
-return (num);
-}
-num++;
-list = _r(list, num, head);
-printf("[%p] %d\n", (void *)head, head->n);
-head = head->next;
-}
-}
-free(list);
-return (num);
+return (newlist);
 }
