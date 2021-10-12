@@ -1,63 +1,47 @@
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * add_nodeint - Adds a new node
- * @head: Pointer to a pointer of a struct constant
- * @n: int constant
+ * insert_nodeint_at_index - inserts a listint_t node at index in list
  *
- * Return: The number of nodes
-**/
-
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-listint_t *newNode;
-
-newNode = malloc(sizeof(newNode));
-if (newNode == NULL)
-return (NULL);
-newNode->n = n;
-newNode->next = *(head);
-*head = newNode;
-
-return (newNode);
-}
-
-/**
- * insert_nodeint_at_index - Inserts a node in a specific position
- * @head: Pointer to a pointer pointing to a struct
- * @idx: Index of the list where the new node should be added
- * @n: value of the int passed to the new node
+ * @head: head of list
+ * @idx: index to add node at, starting at 0
+ * @n: value of node to add
  *
- * Return: The address of the new node
-**/
+ * Return: new node address if success, NULL otherwise
+ */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-listint_t *newNode;
-unsigned int i = 0;
+listint_t *ptr, *prev = NULL;
+int ct = idx;
 
 if (head == NULL)
 return (NULL);
 
-if (idx == 0)
-return (add_nodeint(head, n));
-
-while (*head != NULL)
-{
-if (idx == i)
-{
-newNode = malloc(sizeof(newNode));
-if (newNode == NULL)
+for (ptr = *head; ct && ptr != NULL; ct--, ptr = ptr->next)
+prev = ptr;
+if (ct)
 return (NULL);
 
-newNode->n = n;
-newNode->next = *head;
-*head = newNode;
-return (newNode);
-}
-head = &(*head)->next;
-i++;
-}
+ptr = malloc(sizeof(listint_t));
+if (ptr == NULL)
 return (NULL);
+
+if (prev != NULL)
+{
+ptr->next = prev->next;
+prev->next = ptr;
+}
+else
+{
+ptr->next = NULL;
+}
+if (*head == NULL || idx == 0)
+{
+ptr->next = *head;
+*head = ptr;
+}
+ptr->n = n;
+return (ptr);
 }
