@@ -9,11 +9,16 @@
 size_t print_listint_safe(const listint_t *h)
 {
 
-if (h == NULL)
+if (!h)
 {
 exit(98);
 return;
 }
-print("%d ", h->n);
-return (h);
+const listint_t temp = h;
+
+while(temp != NULL)
+{
+print("%d\N", temp->n);
+temp = temp->next;
+}
 }
