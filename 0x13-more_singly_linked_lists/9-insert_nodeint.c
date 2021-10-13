@@ -1,60 +1,42 @@
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * add_nodeint - Adds a new node
- * @head: Pointer to a pointer of a struct constant
- * @n: int constant
- * Return: The number of nodes
-**/
-listint_t *add_nodeint(listint_t **head, const int n)
-{
-listint_t *newNode;
-
-newNode = malloc(sizeof(newNode));
-if (newNode == NULL)
-		return (NULL);
-newNode->n = n;
-newNode->next = *(head);
-*head = newNode;
-
-return (newNode);
-}
-
-/**
- * insert_nodeint_at_index - Inserts a node in a specific position
- * @head: Pointer to a pointer pointing to a struct
- * @idx: Index of the list where the new node should be added
- * @n: value of the int passed to the new node
- * Return: The address of the new node
-**/
-
+ * insert_nodeint_at_index -  inserts a new node at a given position.
+ * @head: double pointer to the first node in the list
+ * @idx: index of the node to insert
+ * @n: value for new node
+ *
+ * Return: pointer to the indexed node
+ */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-listint_t *newNode;
-unsigned int i = 0;
+unsigned int i;
+listint_t *current, *new;
 
 if (head == NULL)
 return (NULL);
-
+if (idx != 0)
+{
+current = *head;
+for (i = 0; i < idx - 1 && current != NULL; i++)
+{
+current = current->next;
+}
+if (current == NULL)
+return (NULL);
+}
+new = malloc(sizeof(listint_t));
+if (new == NULL)
+return (NULL);
+new->n = n;
 if (idx == 0)
-return (add_nodeint(head, n));
-
-while (*head != NULL)
 {
-if (idx == i)
-{
-newNode = malloc(sizeof(newNode));
-if (newNode == NULL)
-return (NULL);
-
-newNode->n = n;
-newNode->next = *head;
-*head = newNode;
-return (newNode);
+new->next = *head;
+*head = new;
+return (new);
 }
-head = &(*head)->next;
-i++;
-}
-return (NULL);
+new->next = current->next;
+current->next = new;
+return (new);
 }

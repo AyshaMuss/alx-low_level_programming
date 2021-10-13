@@ -1,56 +1,37 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * pop_listint - Deletes the head node and returns the head node's data
- * @head: pointer to a struc
- * Return: Returns nothing
-**/
-int pop_listint(listint_t **head)
-{
-int i = 0;
-listint_t *tmp;
-
-if (*head == NULL)
-return (0);
-
-tmp = *head;
-i = tmp->n;
-*head = (*head)->next;
-
-free(tmp);
-return (i);
-}
-
-/**
- * delete_nodeint_at_index - Deletes a node in a specific position
- * @head: Pointer to a pointer pointing to a struct
- * @index: Index of the list where the new node should be deleted
- * Return: 1 if success or -1 if not
-**/
+ * delete_nodeint_at_index - deletes the node at index index
+ * of a listint_t linked list.
+ * @head: double pointer to the first node in the list
+ * @index: index of the node to delete
+ *
+ * Return: pointer to the indexed node
+ */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *tmp = *head, *nextNode;
 unsigned int i;
+listint_t *current, *next;
 
-if (head == NULL)
+if (head == NULL || *head == NULL)
 return (-1);
-
 if (index == 0)
 {
-pop_listint(head);
+next = (*head)->next;
+free(*head);
+*head = next;
 return (1);
 }
-
-for (i = 0; tmp != NULL && i < (index - 1); i++)
-tmp = tmp->next;
-
-if (tmp == NULL || tmp->next == NULL)
+current = *head;
+for (i = 0; i < index - 1; i++)
+{
+if (current->next == NULL)
 return (-1);
-
-nextNode = (tmp->next)->next;
-free(tmp->next);
-tmp->next = nextNode;
+current = current->next;
+}
+next = current->next;
+current->next = next->next;
+free(next);
 return (1);
 }
