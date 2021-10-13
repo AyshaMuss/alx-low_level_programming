@@ -1,71 +1,61 @@
+#include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "lists.h"
-#include <stdarg.h>
-
 
 /**
- * print_numbers - Print numbers
- * @separator: char separating numbers
- * @n: number of iterations
- * return: Returns an int
-**/
-
-void print_numbers(const char *separator, const unsigned int n, ...)
+ * _r - reallocates memory for an array of pointers
+ * to the nodes in a linked list
+ * @list: the old list to append
+ * @size: size of the new list (always one more than the old list)
+ * @new: new node to add to the list
+ *
+ * Return: pointer to the new list
+ */
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
 {
-unsigned int i, val;
-va_list ls;
+	const listint_t **newlist;
+	size_t i;
 
-va_start(ls, n);
-
-for (i = 0; i < n; i++)
-{
-val = va_arg(ls, int);
-print_numbers("%d", val);
-if (separator)
-{
-continue;
-if (i != (n - 1))
-printf("%s", separator);
-}
-}
-printf("\n");
-va_end(ls);
-return;
+	newlist = malloc(size * sizeof(listint_t *));
+	if (newlist == NULL)
+	{
+		free(list);
+		exit(98);
+	}
+	for (i = 0; i < size - 1; i++)
+		newlist[i] = list[i];
+	newlist[i] = new;
+	free(list);
+	return (newlist);
 }
 
 /**
- *print_listint_safe - prints a listint list
- *@head:pointer to head
- *Return:number of nodes in list
+ * print_listint_safe - prints a listint_t linked list.
+ * @head: pointer to the start of the list
+ *
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-const listint_t **list = NULL;
-size_t i, num = 0;
+	size_t i, num = 0;
+	const listint_t **list = NULL;
 
-if (!head)
-exit(98);
-
-while (head)
-{
-for (i = 0; i < num; i++)
-{
-
-if (head == list[i])
-{
-printf("[%p] %d", (void *)head, head->n)
-;
-
-free(list);
-return (num);
-}
-}
-num++;
-printf("[%p] %d", (void *)head, head->n);
-head = head->next;
-}
-
-free(list);
-return (num);
+	while (head != NULL)
+	{
+		for (i = 0; i < num; i++)
+		{
+			if (head == list[i])
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
+				free(list);
+				return (num);
+			}
+		}
+		num++;
+		list = _r(list, num, head);
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
+	}
+	free(list);
+	return (num);
 }
