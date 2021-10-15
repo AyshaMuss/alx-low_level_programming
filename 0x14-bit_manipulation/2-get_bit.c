@@ -3,7 +3,7 @@
 /**
 * get_bit - is a function that returns the bit at index position of a number
 * @n: is unsigned long int number
-* @index: is an unsigned int 
+* @index: is an unsigned int
 *
 * Return: return 1 when bit is 1 else 0.
 **/
