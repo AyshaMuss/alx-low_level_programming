@@ -1,49 +1,74 @@
 #include "main.h"
 
+void closer(int arg_files);
 /**
- * main - copy 1 file to another
- * @argc: argument counter
- * @argv: argument vector.
- *
- * Return: 2 success, otherwise 0
-**/
-
-int main(int argc, char **argv)
+ * main - Entry Point
+ * @argc: # of args
+ * @argv: array pointer for args
+ * Return: 0
+ */
+int main(int argc, char *argv[])
 {
-int file_from, file_to;
-unsigned long int size;
-char *buffer;
+int file_from, file_to, file_from_r, wr_err;
+char buf[1024];
 
 if (argc != 3)
 {
-dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+dprintf(2, "Usage: cp file_from file_to\n");
 exit(97);
 }
+
 file_from = open(argv[1], O_RDONLY);
 if (file_from == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[0]);
+dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 exit(98);
 }
-file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, 0664);
+
+file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
 if (file_to == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[1]);
+dprintf(2, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
-buffer = malloc(1024);
-while ((size = read(file_from, buffer, sizeof(buffer))) != 0)
-write(file_to, buffer, size);
-if (close(file_from) == -1)
+
+while (file_from_r >= 1024)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-exit(99);
-}
-if (close(file_to) == -1)
+file_from_r = read(file_from, buf, 1024);
+if (file_from_r == -1)
 {
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+closer(file_from);
+closer(file_to);
+exit(98);
+}
+wr_err = write(file_to, buf, file_from_r);
+if (wr_err == -1)
+{
+dprintf(2, "Error: Can't write to %s\n", argv[2]);
 exit(99);
 }
-free(buffer);
+}
+
+closer(file_from);
+closer(file_to);
 return (0);
+}
+
+/**
+ * closer - close with error
+ * @arg_files: argv 1 or 2
+ * Return: void
+ */
+void closer(int arg_files)
+{
+int close_err;
+
+close_err = close(arg_files);
+
+if (close_err == -1)
+{
+dprintf(2, "Error: Can't close fd %d\n", arg_files);
+exit(100);
+}
 }
