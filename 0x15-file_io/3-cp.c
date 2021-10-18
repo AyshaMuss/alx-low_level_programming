@@ -51,8 +51,8 @@ exit(99);
 }
 }
 
-closer(file_from);
-closer(file_to);
+close(file_from);
+close(file_to);
 return (0);
 }
 
